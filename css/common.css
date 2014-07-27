@@ -1,0 +1,255 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('app.css');
+/*
+	common css
+*/
+body {
+	color: #333333;
+	font-family: Arial, "微软雅黑", microsoft yahei;
+}
+li {
+	list-style: none;
+}
+.clear {
+	clear: both;
+	height: 0;
+	width: 0px;
+	display: block;
+}
+.dots {
+	opacity: 1;
+	-moz-opacity: 1;/*火狐*/
+	filter: alpha(opacity=100); /*IE*/
+	-khtml-opacity: 1; /* khtml, old safari */
+}
+/*font*/
+.yellow_text{
+ color: #e2a139;
+
+}
+.red_text {
+	color: #fe6367;
+
+}
+.gray_text {
+	color: #a6a6a6;
+
+}
+.orange_text{
+	color: #fdd5a2;
+
+}
+/*  header  */
+
+
+/*input & select*/
+input, textarea, button, select {
+	background: #fff;
+}
+select, textarea, input[type="text"], input[type=search], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="tel"], input[type="color"], .input-group {
+	background-color: #ffffff;
+	border: none;
+	-moz-border-radius: 0.2em;
+	-webkit-border-radius: 0.2em;
+	border-radius: 0.2em;
+	-moz-box-shadow: inset 0px 1px 0px 0px #bababa;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #bababa;
+	box-shadow: inset 0px 1px 0px 0px #bababa;
+	height: auto;
+	font-family: Arial, "微软雅黑", microsoft yahei;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+}
+/*
+article
+*/
+
+
+
+/* footer  */
+
+/*nav*/
+
+
+/*btn*/
+.button, button {
+	letter-spacing: 1px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-moz-border-radius: 0.2em;
+	-webkit-border-radius: 0.2em;
+	border-radius: 0.2em;
+	padding: 8px 0px;
+	text-decoration: none;
+	vertical-align: middle;
+	font-size: 1.1em;
+	font-weight: normal;
+}
+.button.blue {
+	background-color: #278cc0;
+	-moz-box-shadow: 0px 1px 1px 0px #164f6c;
+	-webkit-box-shadow: 0px 1px 1px 0px #164f6c;
+	box-shadow: 0px 1px 1px 0px #164f6c;
+	background-image: -moz-linear-gradient(top, #2aabe0, #278cc0);
+	background-image: -ms-linear-gradient(top, #2aabe0, #278cc0);
+	background-image: -o-linear-gradient(top, #2aabe0, #278cc0);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#2aabe0), to(#278cc0));
+	background-image: -webkit-linear-gradient(top, #2aabe0, #278cc0);
+	background-image: linear-gradient(top, #2aabe0, #278cc0);
+}
+.button.blue:active {
+	background-image: -moz-linear-gradient(top, #278cc0, #2aabe0);
+	background-image: -ms-linear-gradient(top, #278cc0, #2aabe0);
+	background-image: -o-linear-gradient(top, #278cc0, #2aabe0);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#278cc0), to(#2aabe0));
+	background-image: -webkit-linear-gradient(top, #278cc0, #2aabe0);
+	background-image: linear-gradient(top, #278cc0, #2aabe0);
+}
+.button.orange {
+	background-color: #e84917;
+	-moz-box-shadow: 0px 1px 1px 0px #bababa;
+	-webkit-box-shadow: 0px 1px 1px 0px #bababa;
+	box-shadow: 0px 1px 1px 0px #bababa;
+	background-image: -moz-linear-gradient(top, #e84917, #e80e0e);
+	background-image: -ms-linear-gradient(top, #e84917, #e80e0e);
+	background-image: -o-linear-gradient(top, #e84917, #e80e0e);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#e84917), to(#e80e0e));
+	background-image: -webkit-linear-gradient(top, #e84917, #e80e0e);
+	background-image: linear-gradient(top, #e84917, #e80e0e);
+}
+.button.orange:active {
+	background-image: -moz-linear-gradient(top, #e80e0e, #e84917);
+	background-image: -ms-linear-gradient(top, #e80e0e, #e84917);
+	background-image: -o-linear-gradient(top, #e80e0e, #e84917);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#e80e0e), to(#e84917));
+	background-image: -webkit-linear-gradient(top, #e80e0e, #e84917);
+	background-image: linear-gradient(top, #e80e0e, #e84917);
+}
+.button.yellow {
+	background-color: #e0bc2a;
+	-moz-box-shadow: 0px 1px 1px 0px #bababa;
+	-webkit-box-shadow: 0px 1px 1px 0px #a4841f;
+	box-shadow: 0px 1px 1px 0px #a4841f;
+	background-image: -moz-linear-gradient(top, #e0bc2a, #c09a27);
+	background-image: -ms-linear-gradient(top, #e0bc2a, #c09a27);
+	background-image: -o-linear-gradient(top, #e0bc2a, #c09a27);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#e0bc2a), to(#c09a27));
+	background-image: -webkit-linear-gradient(top, #e0bc2a, #c09a27);
+	background-image: linear-gradient(top, #e0bc2a, #c09a27);
+}
+.button.yellow:active {
+	background-image: -moz-linear-gradient(top, #c09a27, #e0bc2a);
+	background-image: -ms-linear-gradient(top, #c09a27, #e0bc2a);
+	background-image: -o-linear-gradient(top, #c09a27, #e0bc2a);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#c09a27), to(#e0bc2a));
+	background-image: -webkit-linear-gradient(top, #c09a27, #e0bc2a);
+	background-image: linear-gradient(top, #c09a27, #e0bc2a);
+}
+/*popup*/
+.shadow {
+	position: absolute;
+	z-index: 10;
+	/*background:#000;*/
+	height: 100%;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	opacity: 0.39;
+	-moz-opacity: 0.39;/*火狐*/
+	filter: alpha(opacity=39); /*IE*/
+	-khtml-opacity: 0.39; /* khtml, old safari */
+}
+.popup {
+	color: #272727;
+	background: #fff;
+	padding: 15px 0px 6px 0px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-moz-border-radius: 0.4em;
+	-webkit-border-radisu: 0.4em;
+	border-radius: 0.4em;
+	z-index: 12;
+	width: 90%;
+	margin-left: -45%;
+	font-size: 1em;
+}
+
+
+/*loading*/
+@keyframes loading {
+ 0% {
+transform: rotate(0deg);
+}
+ 25% {
+transform: rotate(90deg);
+}
+ 50% {
+transform: rotate(180deg);
+}
+ 75% {
+transform: rotate(270deg);
+}
+ 100% {
+transform: rotate(360deg);
+}
+}
+@-o-keyframes loading {
+ 0% {
+-o-transform: rotate(0deg);
+}
+ 25% {
+-o-transform: rotate(90deg);
+}
+ 50% {
+-o-transform: rotate(180deg);
+}
+ 75% {
+-o-transform: rotate(270deg);
+}
+ 100% {
+-o-transform: rotate(360deg);
+}
+}
+@-moz-keyframes loading {
+ 0% {
+-moz-transform: rotate(0deg);
+}
+ 25% {
+-moz-transform: rotate(90deg);
+}
+ 50% {
+-moz-transform: rotate(180deg);
+}
+ 75% {
+-moz-transform: rotate(270deg);
+}
+ 100% {
+-moz-transform: rotate(360deg);
+}
+}
+@-webkit-keyframes loading {
+ 0% {
+-webkit-transform: rotate(0deg);
+}
+ 25% {
+-webkit-transform: rotate(90deg);
+}
+ 50% {
+-webkit-transform: rotate(180deg);
+}
+ 75% {
+-webkit-transform: rotate(270deg);
+}
+ 100% {
+-webkit-transform: rotate(360deg);
+}
+}
+.loading .icon.spinner {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
