@@ -1,3 +1,13 @@
+
+function play() {
+    if ($("#audioControl").hasClass("active")) {
+        $("#audioControl").removeClass("active");
+        $("#audio")[0].pause();
+    } else {
+        $("#audioControl").addClass("active");
+        $("#audio")[0].play();
+    }
+}
 $(function() {
     var currentIndex = 0;
     function beforeLoadPage() {
@@ -82,4 +92,14 @@ $(function() {
             "-webkit-transform":"rotate("+(i/22)*360+"deg)"
         })
     },100);
+
+    /*setTimeout(function(){
+        play();
+        play();
+        setTimeout(function(){
+            play();
+        }, 1500)
+    },1500);*/
+
+
 });
