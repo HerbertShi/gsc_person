@@ -43,7 +43,7 @@ function afterLoadPage() {
 	}else if (currentIndex == 7) {
 		$("#stageSmall").fadeIn(1500);
 	}else{
-        $(".welcome:not(.logo)").eq(currentIndex).find(".line").slideDown(3000);
+        $(".welcome:not(.logo)").eq(currentIndex).find(".line").fadeIn(2000);
         $(".welcome:not(.logo)").eq(currentIndex).find(".img").fadeIn(1000);
         $(".welcome:not(.logo)").eq(currentIndex).find(".name").animate({"bottom":"12%","opacity":"1"},800,function(){
            $(this).animate({"bottom":"15%"},400);
@@ -56,7 +56,7 @@ function afterLoadPage() {
 
 
 function activity(){
-	currentIndex = $(".welcome").size()-2;
+	currentIndex = $(".welcome").size()-3;
 	$("#nav").animate({"top":"-105%"},1000,function(){
 	   $(this).animate({"top":"-100%"},500);
 	});
@@ -69,7 +69,7 @@ function activity(){
 }
 
 function baoming(){
-	currentIndex = $(".welcome").size()-1;
+	currentIndex = $(".welcome").size()-2;
 	$("#nav").animate({"top":"-105%"},1000,function(){
 	   $(this).animate({"top":"-100%"},500);
 	});
@@ -79,6 +79,19 @@ function baoming(){
             afterLoadPage();
         });
 	});
+}
+
+function weixin(){
+    currentIndex = $(".welcome").size()-1;
+    $("#nav").animate({"top":"-105%"},1000,function(){
+       $(this).animate({"top":"-100%"},500);
+    });
+    beforeLoadPage();
+    $("#wexin").css({"top":"100%"}).show().animate({"top":"-5%"},1000,function(){
+        $(this).animate({"top":"0%"},500,function(){
+            afterLoadPage();
+        });
+    });
 }
 
 $(function() {
@@ -91,7 +104,7 @@ $(function() {
     var zIndex = 10;
     $(".welcome").swipe({
         swipe: function(event, direction, distance, duration, fingerCount) {
-            if(direction == "up" && currentIndex<$(".welcome").size()-3){
+            if(direction == "up" && currentIndex<$(".welcome").size()-4){
                 currentIndex++;
                 $(this).animate({"top":"-105%"},1000,function(){
                    $(this).animate({"top":"-100%"},500);
@@ -102,8 +115,8 @@ $(function() {
                         afterLoadPage();
                     });
                 });
-            }else if(direction == "down" && (currentIndex == $(".welcome").size()-1 || currentIndex == $(".welcome").size()-2) ){
-                currentIndex = $(".welcome").size()-3;
+            }else if(direction == "down" && (currentIndex == $(".welcome").size()-3 || currentIndex == $(".welcome").size()-2 || currentIndex == $(".welcome").size()-1) ){
+                currentIndex = $(".welcome").size()-4;
                 beforeLoadPage();
                 $(".welcome").eq(currentIndex).css({"top":"-100%","zIndex":zIndex++}).show().animate({"top":"5%"},1000,function(){
                     $(this).animate({"top":"0%"},500,function(){

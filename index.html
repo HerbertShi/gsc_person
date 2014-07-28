@@ -9,26 +9,25 @@
 <link rel="stylesheet" href="css/style.css" />
 <style type="text/css">
 #audioControl {
-  position: absolute;
-  z-index: 99999;
-  top: 10px;
-  right: 10px;
-  display: block;
-  width: 18px;
-  height: 15px;
-  background: url('images/player.png') no-repeat;
-  cursor: pointer;
-  background-position: -59px -182px;
+	position: absolute;
+	z-index: 99999;
+	top: 10px;
+	right: 10px;
+	display: block;
+	width: 18px;
+	height: 15px;
+	background: url('images/player.png') no-repeat;
+	cursor: pointer;
+	background-position: -59px -182px;
 }
-#audioControl.active{
-  background-position: -89px -182px;
+#audioControl.active {
+	background-position: -89px -182px;
 }
-
 </style>
 <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
-  <script type="text/javascript" src="js/jquery-ui.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
 function reg_submit(){
 	var name = $("#name").val();
@@ -67,92 +66,71 @@ function reg_submit(){
 </head>
 
 <body>
-  <audio id="audio" controls loop  autoplay="autoplay">
-    <source src="小小少年.mp3" type="audio/mpeg">
+<audio id="audio" controls loop  autoplay="autoplay">
+  <source src="小小少年.mp3" type="audio/mpeg">
 </audio>
 <div id="">
-  <section id="" class="active">
-    <a id="audioControl"  href="javascript:play();" class="active">
-      &nbsp;
-    </a>
-     <div class="welcome index" style="display:none;">
-       <div id="indexTitle" class="img">
-       	<div><img src="images/welcome_text_t1.png" /></div>
+  <section id="" class="active"> <a id="audioControl"  href="javascript:play();" class="active"> &nbsp; </a>
+    <div class="welcome index" style="display:none;">
+      <div id="indexTitle" class="img">
+        <div><img src="images/welcome_text_t1.png" /></div>
         <div><img src="images/welcome_text_t2.png" /></div>
-         <div class="dream"><img src="images/dream_text.png" /></div>  
-         <div><img src="images/welcome_text_b1.png" /></div> 
-         <div><img src="images/welcome_text_b2.png" /></div> 
-       </div>
-       <div id="indexLoad" class="dotted">
-         <a href="#" class="active"></a>
-         <a href="#"></a>
-         <a href="#"></a>
-         <a href="#"></a>
-         <a href="#"></a>
-         <a href="#"></a>
-       </div>
-       <div class="text">&nbsp;</div>
-     </div>
+        <div class="dream"><img src="images/dream_text.png" /></div>
+        <div><img src="images/welcome_text_b1.png" /></div>
+        <div><img src="images/welcome_text_b2.png" /></div>
+      </div>
+      <div id="indexLoad" class="dotted"> <a href="#" class="active"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> <a href="#"></a> </div>
+      <div class="text">&nbsp;</div>
+    </div>
+    <div class="welcome blue_bg" style="display:none;">
+      <div class="line_box">
+        <div class="title_logo">&nbsp;</div>
+        <div class="line">&nbsp;</div>
+        <div class="img"> <img src="images/ad/img_2.png" /> </div>
+        <div class="name"><img src="images/b_1.png" /></div>
+        <div class="name_text"><img src="images/b_2.png" /><img src="images/b_3.png" /></div>
+        <div class="arrow_bg"></div>
+        <div class="text">&nbsp;</div>
+      </div>
+    </div>
+    <div class="welcome pink_bg" style="display:none;">
+      <div class="line_box">
+        <div class="title_logo">&nbsp;</div>
+        <div class="line">&nbsp;</div>
+        <div class="img"> <img src="images/ad/img_1.png" /> </div>
+        <div class="name"><img src="images/t_1.png" /></div>
+        <div class="name_text"> <img src="images/t_2.png" /> <img src="images/t_3.png" /> </div>
+        <div class="arrow_bg"></div>
+        <div class="text">&nbsp;</div>
+      </div>
+    </div>
+    <div class="welcome light_blue_bg" style="display:none;">
+      <div class="line_box">
+        <div class="title_logo">&nbsp;</div>
+        <div class="line">&nbsp;</div>
+        <div class="img"> <img src="images/ad/img_3.png" /> </div>
+        <div class="name"><img src="images/l_1.png" /></div>
+        <div class="name_text"><img src="images/l_2.png" /><img src="images/l_3.png" /></div>
+        <div class="arrow_bg"></div>
+        <div class="text">&nbsp;</div>
+      </div>
+    </div>
+    <div class="welcome light_pink_bg" style="display:none;">
+      <div class="line_box">
+        <div class="title_logo">&nbsp;</div>
+        <div class="line">&nbsp;</div>
+        <div class="img"> <img src="images/ad/img_4.png" /> </div>
+        <div class="name"><img src="images/m_1.png" /></div>
+        <div class="name_text"><img src="images/m_2.png" /><img src="images/m_3.png" /></div>
+        <div class="arrow_bg"></div>
+        <div class="text">&nbsp;</div>
+      </div>
+    </div>
+    
+    <!--     <div class="welcome orange_bg" style="display:none;">
+       <div class="line_box"><div class="title_logo">&nbsp;</div>
+<div class="line">&nbsp;</div>
 
-
-     <div class="welcome pink_bg" style="display:none;">
-       <div class="line_box"><div class="line">&nbsp;</div>
-
-         <div class="img">
-           <img src="images/ad/img_1.png" />     
-         </div>
-         <div class="name"><img src="images/t_1.png" /></div> 
-        <div class="name_text">
-			      <img src="images/t_2.png" /> 
-            <img src="images/t_3.png" />  
-        </div>
-         <div class="arrow_bg"></div>
-         <div class="text">&nbsp;</div>
-       </div>
-     </div>
-
-     <div class="welcome blue_bg" style="display:none;">
-       <div class="line_box"><div class="line">&nbsp;</div>
-
-         <div class="img">
-           <img src="images/ad/img_2.png" />     
-         </div>
-         
-         <div class="name"><img src="images/b_1.png" /></div>
-         <div class="name_text"><img src="images/b_2.png" /><img src="images/b_3.png" /></div>
-         <div class="arrow_bg"></div>
-         <div class="text">&nbsp;</div>
-       </div>
-     </div>
-
-     <div class="welcome light_blue_bg" style="display:none;">
-       <div class="line_box"><div class="line">&nbsp;</div>
-
-         <div class="img">
-           <img src="images/ad/img_3.png" />     
-         </div>
-         <div class="name"><img src="images/l_1.png" /></div> 
-         <div class="name_text"><img src="images/l_2.png" /><img src="images/l_3.png" /></div>
-         <div class="arrow_bg"></div>
-         <div class="text">&nbsp;</div>
-       </div>
-     </div>
-
-     <div class="welcome light_pink_bg" style="display:none;">
-       <div class="line_box"><div class="line">&nbsp;</div>
-
-         <div class="img">
-           <img src="images/ad/img_4.png" />     
-         </div>
-         <div class="name"><img src="images/m_1.png" /></div> 
-         <div class="name_text"><img src="images/m_2.png" /><img src="images/m_3.png" /></div>
-         <div class="arrow_bg"></div>
-         <div class="text">&nbsp;</div>
-       </div>
-     </div>
-
-     <div class="welcome orange_bg" style="display:none;">
-       <div class="line_box"><div class="line">&nbsp;</div>
 
          <div class="img">
            <img src="images/ad/img_5.png" />     
@@ -166,7 +144,9 @@ function reg_submit(){
      </div>
 
      <div class="welcome green_bg" style="display:none;">
-       <div class="line_box"><div class="line">&nbsp;</div>
+       <div class="line_box"><div class="title_logo">&nbsp;</div>
+<div class="line">&nbsp;</div>
+
 
          <div class="img">
            <img src="images/ad/img_6.png" />     
@@ -177,46 +157,33 @@ function reg_submit(){
          <div class="arrow_bg"></div>
          <div class="text">&nbsp;</div>
        </div>
-     </div>
-
-     <div class="welcome stage_bg" style="display:none;">
-
-       <div id="stageSmall" class="img img_2">
-         <img src="images/text_2.png" />     
-       </div>
-       <div class="text">&nbsp;</div>
-     </div>
-
-     <div class="welcome light_pink_bg_2" style="display:none;">
-       <div class="line_box"><div class="line">&nbsp;</div>
-         <div class="img">
-           <img src="images/ad/img_7.png" />     
-         </div>
-         <div class="name_text">
-<img src="images/c_right.png" /></div>
-         <div class="arrow_bg"></div>
-         <div class="text">&nbsp;</div>
-       </div>
-     </div>
-
-     <div id="nav" class="welcome act3" style="display:none;">
-       <div class="link">
-         <span><a href="javascript:activity()"><em class="left_arrow"></em>活动介绍</a></span>
-         <span class="right"><a href="javascript:baoming()"> <em class="left_arrow"></em>我要报名</a></span>
-       </div>
-       <div class="copyright">
-         <img src="images/copyright_text.png" />     
-       </div>
-     </div>
-
-     <div id="activity" class="welcome act2" style="display:none;">
-       <div class="title">活动介绍</div>
-       <div class="img">
-         <img src="images/act_text.png" />     
-       </div>
-     </div>
-
-<!--      <div class="welcome logo" style="display:none;">
+     </div>-->
+    
+    <div class="welcome stage_bg" style="display:none;">
+      <div class="title_logo">&nbsp;</div>
+      <div id="stageSmall" class="img img_2"> <img src="images/text_2.png" /> </div>
+      <div class="text">&nbsp;</div>
+    </div>
+    <div class="welcome light_pink_bg_2" style="display:none;">
+      <div class="line_box">
+        <div class="title_logo">&nbsp;</div>
+        <div class="line">&nbsp;</div>
+        <div class="img"> <img src="images/ad/img_7.png" /> </div>
+        <div class="name_text"> <img src="images/c_right.png" /></div>
+        <div class="arrow_bg"></div>
+        <div class="text">&nbsp;</div>
+      </div>
+    </div>
+    <div id="nav" class="welcome act3" style="display:none;">
+    	<a href="javascript:weixin()" class="contact"><em class="left_arrow"></em><img src="images/c_1.png" /><em class="right_arrow"></em></a>
+      <div class="link"> <span><a href="javascript:activity()"><em class="left_arrow"></em>活动介绍</a></span> <span class="right"><a href="javascript:baoming()"><em class="left_arrow"></em>我要报名</a></span> </div>
+      <div class="copyright"> <img src="images/copyright_text.png" /> </div>
+    </div>
+    <div id="activity" class="welcome act2" style="display:none;">
+      <div class="img"> <img src="images/act_text.png" /> </div>
+    </div>
+    
+    <!--      <div class="welcome logo" style="display:none;">
        <div class="loading_logo">
          <img src="images/loading.png" />     
        </div>
@@ -224,65 +191,66 @@ function reg_submit(){
          <img src="images/loading_text.png" />     
        </div>
      </div> -->
+    
+    <div id="baoming" class="welcome act" style="display:none;">
+      <div class="content">
+        <div class="img"> <img src="images/title_text.png" /> </div>
+        <div class="fill">
+        <div class="bg">&nbsp;</div>
+        <div class="fill_content">
+        <dl>
+          <dt><span>姓名：</span></dt>
+          <dd>
+            <input type="text" id="name" name="name"/>
+          </dd>
+        </dl>
+        <div class="clear">&nbsp;</div>
+        <dl>
+          <dt><span>年龄：</span></dt>
+          <dd>
+            <input type="text" id="age" name="age"/>
+          </dd>
+        </dl>
+        <div class="clear">&nbsp;</div>
+               <div class="big">
+          <dl>
+            <dt ><span>联系电话：</span></dt>
+            <dd>
+              <input type="text" id="mobile" name="mobile"/>
+            </dd>
+          </dl>
+          <dl class="no_border">
+            <dt><span>推荐机构：</span></dt>
+            <dd>
+              <input type="text" id="recommend" name="recommend"/>
+            </dd>
+          </dl>
+          <div class="clear">&nbsp;</div>
+        </div>
+        </div>
+        </div>
+        <div class="choice">
+          <div class="border"> <span>
+            <input type="radio" checked name="profession" value="儿童组（4-9岁）"/>
+            儿童组<br/>（4-9岁）</span><span class="second">
+            <input type="radio" name="profession" value="少年组（10-15岁）"/>
+            少年组<br/>（10-15岁）</span> </div>
+        </div>
 
-     <div id="baoming" class="welcome act" style="display:none;">
-       <div class="content">
-         <div class="img">
-           <img src="images/title_text.png" />     
-         </div>
-         <dl>
-           <dt>姓名：</dt>
-           <dd>
-             <input type="text" id="name" name="name"/>     
-           </dd>
-         </dl>
-         <div class="clear">&nbsp;</div>
-         <dl>
-           <dt>年龄：</dt>
-           <dd>
-             <input type="text" id="age" name="age"/>     
-           </dd>
-         </dl>
-         <div class="clear">&nbsp;</div>
-         <div class="choice">
-           <div class="title">专业组别</div>
-           <div class="border">
-             <span><input type="radio" checked name="profession" value="儿童组（4-9岁）"/>儿童组（4-9岁）</span><span><input type="radio" name="profession" value="少年组（10-15岁）"/>少年组（10-15岁）</span>
-           </div>
-         </div>
-         <div class="big">
-           <dl>
-             <dt >联系电话：</dt>
-             <dd>
-               <input type="text" id="mobile" name="mobile"/>     
-             </dd>
-           </dl>
-           <dl>
-             <dt>推荐机构：</dt>
-             <dd>
-               <input type="text" id="recommend" name="recommend"/>     
-             </dd>
-           </dl>
-           <div class="clear">&nbsp;</div>
-         </div>
-         <div class="small">
-           <ul>
-             <li>1、本人（或监护人）确认：以上《报名表》中内容属实，本人所填写的资料均属实无误。</li>
-             <li>2、本人遵守组委会制定的各项规章制度，服从大赛组委会的各项安排。</li>
-           </ul>
-         </div>
-         <div class="border_line">&nbsp;</div>
-         <div>
-         <a href="javascript:reg_submit();" class="submit">
-           <em class="left_arrow"></em>
-           提交报名
-           <em class="right_arrow"></em>
-         </a>
-         
-         </div>
-       </div>
-     </div>
-
+        <div class="small">
+          <ul>
+            <li>1、本人（或监护人）确认：以上《报名表》中内容属实，本人所填写的资料均属实无误。</li>
+            <li>2、本人遵守组委会制定的各项规章制度，服从大赛组委会的各项安排。</li>
+          </ul>
+        </div>
+        <div class="border_line">&nbsp;</div>
+        <div> <a href="javascript:reg_submit();" class="submit">提交报名</a> </div>
+      </div>
+    </div>
+    
+    <div id="wexin" class="welcome act4" style="display:none;">
+      <div class="img"><img src="images/act_text_2.png" /> </div>
+    </div>
   </section>
 </div>
 </body>
