@@ -21,9 +21,8 @@
 	position: absolute;
 	bottom:3%;
 	height:25px;
-	left:50%;
 	width:30%;	
-	margin-left:-15%;
+	right:5%;
 }
 .stage_bg .text{
 	background-image: url(../images/stage_text_bg.png);
@@ -31,6 +30,13 @@
 .stage_bg {
 	background-image: url(../images/ad/back_bg.png);
 	text-align: left;
+}
+.img{
+	position:relative;
+	z-index:10;	
+}
+.img_2{
+	margin-top:30%;	
 }
 .welcome .img img {
 	width: 70%;
@@ -208,10 +214,6 @@
 .green_bg {
 	background-color: #D8EBD6;
 }
-.pink_bg .text,.blue_bg .text,.light_blue_bg .text,.orange_bg .text,.green_bg .text,.pink_bg .text,.light_pink_bg .text,.light_pink_bg_2 .text{
-	width:30%;	
-	margin-left:-15%;
-}
 .act .content {
 	width: 90%;
 	margin: 0 auto;
@@ -277,25 +279,40 @@
 	margin-top: 5px;
 	margin-bottom: 1em;
 }
-.line {
+.line_box {
+
+}
+.line{
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: auto 100%;
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
-	background-image: url(../images/ad/line.png);
+	background-image: url(../images/ad/line.png);	
+	position:absolute;
+	left:0px;
+	top:0px;
 }
-.name {
+.name{
 	width:58%;
 	margin:0 auto;
 	position:absolute;
-	bottom:9%;
+	bottom: 50%;
 	left:50%;
-	height:17%;
+	height:10%;
+	margin-left:-29%;	
+}
+.name_text {
+	width:58%;
+	margin:0 auto;
+	position:absolute;
+	bottom:-10%;
+	left:50%;
+	height:12%;
 	margin-left:-29%;
 }
-.name  img{
+.name_text  img,.name img{
 	width:100%;	
 }
 

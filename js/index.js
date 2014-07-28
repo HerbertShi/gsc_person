@@ -19,12 +19,13 @@ function beforeLoadPage() {
 	if (currentIndex == 0) {
         $("#indexTitle div").hide();
 	}else if (currentIndex == 7) {
-		$("#stageBig").hide();
 		$("#stageSmall").hide();
 	}else{
+        $(".welcome:not(.logo)").eq(currentIndex).find(".line").hide();
         $(".welcome:not(.logo)").eq(currentIndex).find(".img").hide();
-        $(".welcome:not(.logo)").eq(currentIndex).find(".name img").hide();
-        $(".welcome:not(.logo)").eq(currentIndex).find(".arrow_bg").hide()
+        $(".welcome:not(.logo)").eq(currentIndex).find(".name").css({"bottom":"50%","opacity":"0"});
+        $(".welcome:not(.logo)").eq(currentIndex).find(".name_text").css({"bottom":"-10%","opacity":"0"});
+        $(".welcome:not(.logo)").eq(currentIndex).find(".arrow_bg").hide();
     }
 }
 
@@ -40,51 +41,43 @@ function afterLoadPage() {
             });
         });
 	}else if (currentIndex == 7) {
-		$("#stageSmall").fadeIn(1500,function(){
-			$("#stageBig").slideDown(1000);
-		});
+		$("#stageSmall").fadeIn(1500);
 	}else{
-        $(".welcome:not(.logo)").eq(currentIndex).find(".img").fadeIn(1000,function(){
-            $(".welcome:not(.logo)").eq(currentIndex).find(".name img").eq(0).fadeIn(1000,function(){
-                $(this).next().fadeIn(800,function(){
-                    $(this).next().fadeIn(800);
-                    $(".welcome:not(.logo)").eq(currentIndex).find(".arrow_bg").slideDown(1000);
-                });
-            });
+        $(".welcome:not(.logo)").eq(currentIndex).find(".line").slideDown(3000);
+        $(".welcome:not(.logo)").eq(currentIndex).find(".img").fadeIn(1000);
+        $(".welcome:not(.logo)").eq(currentIndex).find(".name").animate({"bottom":"12%","opacity":"1"},800,function(){
+           $(this).animate({"bottom":"15%"},400);
+        });
+        $(".welcome:not(.logo)").eq(currentIndex).find(".name_text").animate({"bottom":"12%","opacity":"1"},800,function(){
+           $(this).animate({"bottom":"9%"},400);
         });
     }
 }
 
 
 function activity(){
-	currentIndex = 10
+	currentIndex = $(".welcome").size()-2;
 	$("#nav").animate({"top":"-105%"},1000,function(){
 	   $(this).animate({"top":"-100%"},500);
 	});
-	$("#activity").prev().css({"top":"100%"}).show().animate({"top":"-5%"},1000,function(){
+    beforeLoadPage();
+	$("#activity").css({"top":"100%"}).show().animate({"top":"-5%"},1000,function(){
 		$(this).animate({"top":"0%"},500,function(){
-			beforeLoadPage();
-			$(this).fadeOut(400);
-			$(this).next().css({"top":"0%"}).fadeIn(800,function(){
-				afterLoadPage();
-			});
-		});
+            afterLoadPage();
+        });
 	});
 }
 
 function baoming(){
-	currentIndex = 11
+	currentIndex = $(".welcome").size()-1;
 	$("#nav").animate({"top":"-105%"},1000,function(){
 	   $(this).animate({"top":"-100%"},500);
 	});
-	$("#baoming").prev().css({"top":"100%"}).show().animate({"top":"-5%"},1000,function(){
+    beforeLoadPage();
+	$("#baoming").css({"top":"100%"}).show().animate({"top":"-5%"},1000,function(){
 		$(this).animate({"top":"0%"},500,function(){
-			beforeLoadPage();
-			$(this).fadeOut(400);
-			$(this).next().css({"top":"0%"}).fadeIn(800,function(){
-				afterLoadPage();
-			});
-		});
+            afterLoadPage();
+        });
 	});
 }
 
@@ -96,32 +89,37 @@ $(function() {
     });
 
     var zIndex = 10;
-    $(".welcome:not(.logo)").swipe({
+    $(".welcome").swipe({
         swipe: function(event, direction, distance, duration, fingerCount) {
-            if(direction == "up" && $(this).index()<$(".welcome").size()-1){
+            if(direction == "up" && currentIndex<$(".welcome").size()-3){
                 currentIndex++;
                 $(this).animate({"top":"-105%"},1000,function(){
                    $(this).animate({"top":"-100%"},500);
                 });
+                beforeLoadPage();
                 $(this).next().css({"top":"100%","zIndex":zIndex++}).show().animate({"top":"-5%"},1000,function(){
                     $(this).animate({"top":"0%"},500,function(){
-                        beforeLoadPage();
-                        $(this).fadeOut(400);
-                        $(this).next().css({"top":"0%"}).fadeIn(800,function(){
-                            afterLoadPage();
-                        });
+                        afterLoadPage();
                     });
                 });
-            }else if(direction == "down" && $(this).index()>0){
+            }else if(direction == "down" && (currentIndex == $(".welcome").size()-1 || currentIndex == $(".welcome").size()-2) ){
+                currentIndex = $(".welcome").size()-3;
+                beforeLoadPage();
+                $(".welcome").eq(currentIndex).css({"top":"-100%","zIndex":zIndex++}).show().animate({"top":"5%"},1000,function(){
+                    $(this).animate({"top":"0%"},500,function(){
+                        afterLoadPage();
+                    });
+                });
+                $(this).animate({"top":"105%"},1000,function(){
+                    $(this).animate({"top":"100%"},500);
+                });
+            }else if(direction == "down" && currentIndex>0){
                 currentIndex--;
+                beforeLoadPage();
                 $(this).prev().css({"top":"-100%","zIndex":zIndex++}).show().animate({"top":"5%"},1000,function(){
-                     $(this).animate({"top":"0%"},500,function(){
-                        beforeLoadPage();
-                        $(this).fadeOut(400);
-                        $(this).prev().css({"top":"0%"}).fadeIn(800,function(){
-                            afterLoadPage();
-                        });
-                     });
+                    $(this).animate({"top":"0%"},500,function(){
+                        afterLoadPage();
+                    });
                 });
                 $(this).animate({"top":"105%"},1000,function(){
                     $(this).animate({"top":"100%"},500);
@@ -143,24 +141,16 @@ $(function() {
 
     var i = 0;
     var loading = setInterval(function(){
-        if(i == 21){
+        if(i == 19){
             i = 0;
         }else{
             i++;
         }
         $(".loading_logo img").css({
-            "-moz-transform":"rotate("+(i/22)*360+"deg)",
-            "-webkit-transform":"rotate("+(i/22)*360+"deg)"
+            "-moz-transform":"rotate("+(i/20)*360+"deg)",
+            "-webkit-transform":"rotate("+(i/20)*360+"deg)"
         })
     },100);
-
-    /*setTimeout(function(){
-        play();
-        play();
-        setTimeout(function(){
-            play();
-        }, 1500)
-    },1500);*/
 
 
 });
