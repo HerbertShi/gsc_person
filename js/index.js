@@ -1,5 +1,6 @@
 
 function play() {
+    $(document).off("touchstart");
     if ($("#audioControl").hasClass("active")) {
         $("#audioControl").removeClass("active");
         $("#audio")[0].pause();
@@ -8,26 +9,86 @@ function play() {
         $("#audio")[0].play();
     }
 }
-$(function() {
-    var currentIndex = 0;
-    function beforeLoadPage() {
-        if (currentIndex == 0) {
-            $("#dreamText img").hide();
-        }else if (currentIndex == 7) {
-            $("#stageBig").hide();
-            $("#stageSmall").hide();
-        }
-    }
 
-    function afterLoadPage() {
-        if (currentIndex == 0) {
-            $("#dreamText  img").fadeIn(1200);
-        }else if (currentIndex == 7) {
-            $("#stageSmall").fadeIn(1200,function(){
-                $("#stageBig").slideDown();
-            });
-        }
+$(document).on("touchstart",function(){
+    $("#audio")[0].play();
+});
+
+var currentIndex = 0;
+function beforeLoadPage() {
+	if (currentIndex == 0) {
+        $("#indexTitle div").hide();
+	}else if (currentIndex == 7) {
+		$("#stageBig").hide();
+		$("#stageSmall").hide();
+	}else{
+        $(".welcome:not(.logo)").eq(currentIndex).find(".img").hide();
+        $(".welcome:not(.logo)").eq(currentIndex).find(".name img").hide();
+        $(".welcome:not(.logo)").eq(currentIndex).find(".arrow_bg").hide()
     }
+}
+
+function afterLoadPage() {
+	if (currentIndex == 0) {
+        $("#indexTitle div").eq(0).fadeIn(500,function(){
+            $(this).next().fadeIn(800,function(){
+                $(this).next().fadeIn(1200,function(){
+                     $(this).next().fadeIn(800,function(){
+                        $(this).next().fadeIn(800);
+                     });
+                });
+            });
+        });
+	}else if (currentIndex == 7) {
+		$("#stageSmall").fadeIn(1500,function(){
+			$("#stageBig").slideDown(1000);
+		});
+	}else{
+        $(".welcome:not(.logo)").eq(currentIndex).find(".img").fadeIn(1000,function(){
+            $(".welcome:not(.logo)").eq(currentIndex).find(".name img").eq(0).fadeIn(1000,function(){
+                $(this).next().fadeIn(800,function(){
+                    $(this).next().fadeIn(800);
+                    $(".welcome:not(.logo)").eq(currentIndex).find(".arrow_bg").slideDown(1000);
+                });
+            });
+        });
+    }
+}
+
+
+function activity(){
+	currentIndex = 10
+	$("#nav").animate({"top":"-105%"},1000,function(){
+	   $(this).animate({"top":"-100%"},500);
+	});
+	$("#activity").prev().css({"top":"100%"}).show().animate({"top":"-5%"},1000,function(){
+		$(this).animate({"top":"0%"},500,function(){
+			beforeLoadPage();
+			$(this).fadeOut(400);
+			$(this).next().css({"top":"0%"}).fadeIn(800,function(){
+				afterLoadPage();
+			});
+		});
+	});
+}
+
+function baoming(){
+	currentIndex = 11
+	$("#nav").animate({"top":"-105%"},1000,function(){
+	   $(this).animate({"top":"-100%"},500);
+	});
+	$("#baoming").prev().css({"top":"100%"}).show().animate({"top":"-5%"},1000,function(){
+		$(this).animate({"top":"0%"},500,function(){
+			beforeLoadPage();
+			$(this).fadeOut(400);
+			$(this).next().css({"top":"0%"}).fadeIn(800,function(){
+				afterLoadPage();
+			});
+		});
+	});
+}
+
+$(function() {
 
     beforeLoadPage();
     $(".welcome:eq(" + currentIndex + ")").show(function(){
