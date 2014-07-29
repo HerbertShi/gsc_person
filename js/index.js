@@ -1,3 +1,55 @@
+var messageTimeout;
+
+function clearMessage(){
+  $('.border_line').fadeOut(1000,function(){
+    $(this).html("");
+    $(this).show();
+  })
+}
+
+function reg_submit(){
+  clearTimeout(messageTimeout);
+    var name = $("#name").val();
+    var age = $("#age").val();
+    var profession =  $("input[name='profession']:checked").val();
+    var mobile_phone = $("#mobile").val();
+    var recommend = $("#recommend").val();
+    
+    if($.trim(name) == ''){
+        $('.border_line').html('姓名不能为空!');
+    messageTimeout = setTimeout(function(){
+      clearMessage();
+    },2000);
+        return;
+    }
+    
+    if(isNaN(age)){
+        $('.border_line').html('年龄请填写数字!');
+    messageTimeout = setTimeout(function(){
+      clearMessage();
+    },2000);
+        return;
+    }
+    
+    var reg = /^0?1[358]\d{9}$/;
+    if (!reg.test($.trim(mobile_phone))){
+        $('.border_line').html('手机格式:15866668888!');
+        messageTimeout = setTimeout(function(){
+          clearMessage();
+        },2000);
+        return;
+    }
+    
+    $.ajax({
+        url:"mobile.php",
+        type:"post",
+        data:"act=register&name="+name+"&age="+age+"&mobile="+mobile_phone+"&profession="+profession+"&recommend="+recommend,
+        success:function(data){
+            $('.border_line').html(data);
+        }
+    });
+}
+
 
 function play() {
     $(document).off("touchstart");
@@ -45,12 +97,15 @@ function afterLoadPage() {
 	}else{
         $(".welcome:not(.logo)").eq(currentIndex).find(".line").fadeIn(2000);
         $(".welcome:not(.logo)").eq(currentIndex).find(".img").fadeIn(1000);
-        $(".welcome:not(.logo)").eq(currentIndex).find(".name").animate({"bottom":"12%","opacity":"1"},800,function(){
+		
+        $(".welcome:not(.logo)").eq(currentIndex).find(".name").animate({"bottom":"12%","opacity":"1"},500,function(){
            $(this).animate({"bottom":"15%"},400);
         });
-        $(".welcome:not(.logo)").eq(currentIndex).find(".name_text").animate({"bottom":"12%","opacity":"1"},800,function(){
+        $(".welcome:not(.logo)").eq(currentIndex).find(".name_text").animate({"bottom":"12%","opacity":"1"},500,function(){
            $(this).animate({"bottom":"9%"},400);
+		   
         });
+		$(".welcome:not(.logo)").eq(currentIndex).find(".arrow_bg").fadeIn(2000);
     }
 }
 

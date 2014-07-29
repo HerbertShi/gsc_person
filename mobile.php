@@ -16,7 +16,7 @@ if ($mobile && !preg_match($pattern,$mobile)){
 require_once('config.php');
 $con = mysql_connect($db_host,$db_users,$db_pass);
 mysql_select_db($db_name, $con);
-mysql_query("SET CHARACTER SET UTF8"); 
+mysql_query("SET Names UTF8"); 
 
 $result  = mysql_query("select mobile from users where mobile='".$mobile."'",$con);
 $have_one = mysql_num_rows($result);

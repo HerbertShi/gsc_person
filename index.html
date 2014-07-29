@@ -5,7 +5,7 @@
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<title>活动页</title>
+<title>全城寻找寰宇之星</title>
 <link rel="stylesheet" href="css/style.css" />
 <style type="text/css">
 #audioControl {
@@ -29,38 +29,7 @@
 <script type="text/javascript" src="js/jquery-ui.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
-function reg_submit(){
-	var name = $("#name").val();
-	var age = $("#age").val();
-	var profession =  $("input[name='profession']:checked").val();
-    var mobile_phone = $("#mobile").val();
-    var recommend = $("#recommend").val();
-	
-	if($.trim(name) == ''){
-		$('.border_line').html('姓名不能为空!');
-		return;
-	}
-	
-	if(isNaN(age)){
-		$('.border_line').html('年龄请填写数字!');
-		return;
-	}
-	
-	var reg = /^0?1[358]\d{9}$/;
-    if (!reg.test($.trim(mobile_phone))){
-        $('.border_line').html('手机格式:15866668888!');
-        return;
-    }
-	
-   	$.ajax({
-		url:"mobile.php",
-		type:"post",
-		data:"act=register&name="+name+"&age="+age+"&mobile="+mobile_phone+"&profession="+profession+"&recommend="+recommend,
-		success:function(data){
-   			$('.border_line').html(data);
-		}
-	});
-}
+
 
 </script>
 </head>
@@ -243,6 +212,7 @@ function reg_submit(){
             <li>2、本人遵守组委会制定的各项规章制度，服从大赛组委会的各项安排。</li>
           </ul>
         </div>
+        <div class="clear"></div>
         <div class="border_line">&nbsp;</div>
         <div> <a href="javascript:reg_submit();" class="submit">提交报名</a> </div>
       </div>
